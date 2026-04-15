@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earth Alert — スマートな地震速報 | Nikki Apps</title>
+  <meta name="description" content="距離とマグニチュードで通知を絞り込むスマートな地震速報アプリ。USGS のリアルタイムデータを使用。">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Nikki Apps</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/earthalert/privacy.html">Privacy</a></li>
+      <li><a href="mailto:nikki.ai.0024@gmail.com">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <!-- Hero: dark -->
+  <section class="section section--dark hero">
+    <div class="container">
+      <p class="eyebrow">Earth Alert</p>
+      <h1>地震速報、<br>スマートに。</h1>
+      <p class="tagline">距離とマグニチュードで通知を絞り込む。あなたに関係のある地震だけが届きます。</p>
+      <div class="hero-cta">
+        <a href="https://apps.apple.com/app/id6760021158" class="btn btn-primary" target="_blank" rel="noopener">App Store で見る</a>
+        <a href="/earthalert/privacy.html" class="btn btn-pill">プライバシー</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features: light -->
+  <section class="section section--light">
+    <div class="container">
+      <h2 class="section-heading reveal">必要な通知、だけ。</h2>
+      <p class="section-lede reveal">絞り込みの自由度で、通知の質が変わります。</p>
+
+      <div class="features">
+        <div class="feature reveal">
+          <p class="feature-eyebrow">Distance</p>
+          <h3>位置情報ベース</h3>
+          <p>現在地から 300km 以内など、距離で通知を絞り込み。遠くの地震に起こされることはもうありません。</p>
+        </div>
+        <div class="feature reveal">
+          <p class="feature-eyebrow">Magnitude</p>
+          <h3>マグニチュードで絞り込み</h3>
+          <p>M4 以上、M5 以上など、通知したい震度を自由に設定できます。</p>
+        </div>
+        <div class="feature reveal">
+          <p class="feature-eyebrow">Realtime</p>
+          <h3>USGS リアルタイム</h3>
+          <p>米国地質調査所のオープンデータを利用。世界中の地震情報をリアルタイムで取得します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>&copy; 2026 Nikki Apps</p>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/earthalert/privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>

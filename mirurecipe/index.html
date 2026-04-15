@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ミルレシピ — YouTube 動画からレシピ | Nikki Apps</title>
+  <meta name="description" content="YouTube の料理動画からステップごとのレシピを自動生成。お気に入りも保存できます。">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Nikki Apps</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/mirurecipe/privacy.html">Privacy</a></li>
+      <li><a href="mailto:nikki.ai.0024@gmail.com">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section class="section section--dark hero">
+    <div class="container">
+      <p class="eyebrow">ミルレシピ</p>
+      <h1>動画が、<br>レシピに。</h1>
+      <p class="tagline">YouTube の料理動画を、ステップごとのレシピに自動変換。お気に入りも、手書きメモのように保存できます。</p>
+      <div class="hero-cta">
+        <a href="https://apps.apple.com/app/id6760578027" class="btn btn-primary" target="_blank" rel="noopener">App Store で見る</a>
+        <a href="/mirurecipe/privacy.html" class="btn btn-pill">プライバシー</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--light">
+    <div class="container">
+      <h2 class="section-heading reveal">見ながら、作る。</h2>
+      <p class="section-lede reveal">動画を途中で止めなくても、レシピは手元にあります。</p>
+
+      <div class="features">
+        <div class="feature reveal">
+          <p class="feature-eyebrow">Video</p>
+          <h3>動画からインポート</h3>
+          <p>YouTube の URL をペーストするだけ。動画のタイトル、サムネイル、情報を自動取得します。</p>
+        </div>
+        <div class="feature reveal">
+          <p class="feature-eyebrow">Steps</p>
+          <h3>ステップ表示</h3>
+          <p>材料と手順をステップごとに整理。調理中にスクロールしやすい画面設計です。</p>
+        </div>
+        <div class="feature reveal">
+          <p class="feature-eyebrow">Local</p>
+          <h3>ローカル保存</h3>
+          <p>保存したレシピはデバイス内に。アカウント登録なし、ネットなしでも読めます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>&copy; 2026 Nikki Apps</p>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/mirurecipe/privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>

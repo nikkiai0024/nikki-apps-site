@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikki Apps — iOS & Android アプリ</title>
+  <meta name="description" content="日々をすこし軽くする iOS / Android アプリたち。地震速報、燃費記録、MBTI 診断、レシピ動画まとめ。">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Nikki Apps">
+  <meta property="og:description" content="日々をすこし軽くする iOS / Android アプリたち。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nikki-apps.com/">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Nikki Apps</a>
+    <ul class="nav-links">
+      <li><a href="#apps">Apps</a></li>
+      <li><a href="mailto:nikki.ai.0024@gmail.com">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <!-- Hero: dark section -->
+  <section class="section section--dark hero">
+    <div class="container">
+      <p class="eyebrow">Indie developer · Tokyo</p>
+      <h1>日々を、<br>すこし軽く。</h1>
+      <p class="tagline">地震速報、燃費記録、MBTI 診断、レシピメモ。小さいけれど毎日使える iOS &amp; Android アプリたち。</p>
+      <div class="hero-cta">
+        <a href="#apps" class="btn btn-primary">アプリを見る</a>
+        <a href="mailto:nikki.ai.0024@gmail.com" class="btn btn-pill">お問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apps: light section -->
+  <section class="section section--light" id="apps">
+    <div class="container">
+      <h2 class="section-heading reveal">4 つのアプリ</h2>
+      <p class="section-lede reveal">どれも無料で使えます。</p>
+
+      <div class="app-grid">
+        <a href="/earthalert/" class="app-tile reveal">
+          <p class="app-tile-eyebrow">Earth Alert</p>
+          <h3 class="app-tile-title">地震速報、スマートに。</h3>
+          <p class="app-tile-tagline">距離とマグニチュードで絞り込む。あなたに関係のある地震だけを届けます。</p>
+          <div class="app-tile-cta">
+            <span class="learn-more">詳しく見る</span>
+          </div>
+        </a>
+
+        <a href="/fuellog/" class="app-tile reveal">
+          <p class="app-tile-eyebrow">給油ノート</p>
+          <h3 class="app-tile-title">燃費を、ひと目で。</h3>
+          <p class="app-tile-tagline">給油のたびに自動で計算。複数車両、CSV エクスポート対応。</p>
+          <div class="app-tile-cta">
+            <span class="learn-more">詳しく見る</span>
+          </div>
+        </a>
+
+        <a href="/typelink/" class="app-tile reveal">
+          <p class="app-tile-eyebrow">TypeLink</p>
+          <h3 class="app-tile-title">20 問で MBTI 診断。</h3>
+          <p class="app-tile-tagline">最短 3 分。結果はシェアカードで SNS に投稿できます。</p>
+          <div class="app-tile-cta">
+            <span class="learn-more">詳しく見る</span>
+          </div>
+        </a>
+
+        <a href="/mirurecipe/" class="app-tile reveal">
+          <p class="app-tile-eyebrow">ミルレシピ</p>
+          <h3 class="app-tile-title">動画がレシピに。</h3>
+          <p class="app-tile-tagline">YouTube の料理動画から、ステップごとのレシピを自動生成。</p>
+          <div class="app-tile-cta">
+            <span class="learn-more">詳しく見る</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>&copy; 2026 Nikki Apps</p>
+    <ul class="footer-links">
+      <li><a href="/earthalert/privacy.html">Privacy</a></li>
+      <li><a href="mailto:nikki.ai.0024@gmail.com">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>

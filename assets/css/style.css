@@ -1,0 +1,809 @@
+/* ==========================================================================
+   Nikki Apps — Apple-inspired Design System
+   Reference: Apple SF Pro / section-level theming / pill CTAs
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Base colors */
+  --color-black: #000000;
+  --color-near-black: #1d1d1f;
+  --color-light-gray: #f5f5f7;
+  --color-white: #ffffff;
+
+  /* Interactive */
+  --color-apple-blue: #0071e3;
+  --color-link-blue: #0066cc;
+  --color-bright-blue: #2997ff;
+
+  /* Text shades */
+  --color-text-soft: rgba(0, 0, 0, 0.8);
+  --color-text-muted: rgba(0, 0, 0, 0.56);
+  --color-text-tertiary: rgba(0, 0, 0, 0.48);
+
+  /* Shadows */
+  --shadow-card: rgba(0, 0, 0, 0.22) 3px 5px 30px 0px;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* Layout */
+  --container-width: 980px;
+  --container-narrow: 692px;
+  --nav-height: 48px;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont,
+               "Helvetica Neue", "Hiragino Sans", "Yu Gothic", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.022em;
+  color: var(--color-near-black);
+  background: var(--color-white);
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-link-blue);
+  text-decoration: none;
+  transition: color 0.2s var(--ease-out-soft);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Section Theming — Apple's signature alternating black / light-gray rhythm
+   -------------------------------------------------------------------------- */
+
+.section {
+  padding: 96px 0;
+  position: relative;
+}
+
+.section--dark {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.section--light {
+  background: var(--color-light-gray);
+  color: var(--color-near-black);
+}
+
+.section--white {
+  background: var(--color-white);
+  color: var(--color-near-black);
+}
+
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark p {
+  color: var(--color-white);
+}
+
+.section--dark a {
+  color: var(--color-bright-blue);
+}
+
+@media (max-width: 734px) {
+  .section {
+    padding: 64px 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Container
+   -------------------------------------------------------------------------- */
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+/* --------------------------------------------------------------------------
+   Navigation — translucent dark glass, always
+   -------------------------------------------------------------------------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.nav-inner {
+  max-width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-white);
+  letter-spacing: -0.022em;
+}
+
+.nav-brand:hover {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-white);
+  opacity: 0.88;
+  letter-spacing: -0.01em;
+  transition: opacity 0.2s var(--ease-out-soft);
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    gap: 18px;
+  }
+  .nav-links a {
+    font-size: 11px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Typography — based on Apple spec
+   -------------------------------------------------------------------------- */
+
+.display-hero {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.07;
+  letter-spacing: -0.5px;
+}
+
+.display-section {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.10;
+  letter-spacing: -0.3px;
+}
+
+.display-tile {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: 0.196px;
+}
+
+.subheading {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.19;
+  letter-spacing: 0.231px;
+}
+
+.body-text {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.374px;
+}
+
+.body-emphasis {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.24;
+  letter-spacing: -0.374px;
+}
+
+.caption {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: -0.224px;
+  color: var(--color-text-soft);
+}
+
+.section--dark .caption {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 734px) {
+  .display-hero {
+    font-size: 40px;
+    letter-spacing: -0.3px;
+  }
+  .display-section {
+    font-size: 32px;
+  }
+  .display-tile {
+    font-size: 24px;
+  }
+  .subheading {
+    font-size: 19px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Hero Module
+   -------------------------------------------------------------------------- */
+
+.hero {
+  padding: 112px 0 88px;
+  text-align: center;
+}
+
+.hero .eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-bright-blue);
+  margin-bottom: 14px;
+}
+
+.section--light .hero .eyebrow,
+.section--white .hero .eyebrow {
+  color: var(--color-link-blue);
+}
+
+.hero h1 {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.07;
+  letter-spacing: -0.5px;
+  margin-bottom: 14px;
+}
+
+.hero .tagline {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.19;
+  letter-spacing: 0.231px;
+  max-width: 620px;
+  margin: 0 auto 28px;
+}
+
+.section--dark .hero .tagline {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.section--light .hero .tagline,
+.section--white .hero .tagline {
+  color: var(--color-text-soft);
+}
+
+.hero-cta {
+  display: inline-flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 14px;
+}
+
+@media (max-width: 734px) {
+  .hero {
+    padding: 80px 0 64px;
+  }
+  .hero h1 {
+    font-size: 40px;
+    letter-spacing: -0.3px;
+  }
+  .hero .tagline {
+    font-size: 19px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s var(--ease-out-soft);
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+/* Primary solid — the "Buy" button */
+.btn-primary {
+  background: var(--color-apple-blue);
+  color: var(--color-white);
+  padding: 12px 22px;
+  border-radius: 980px;
+  min-height: 44px;
+}
+
+.btn-primary:hover {
+  background: #0077ed;
+  color: var(--color-white);
+}
+
+/* Pill link — the "Learn more" capsule */
+.btn-pill {
+  background: transparent;
+  padding: 12px 22px;
+  border-radius: 980px;
+  min-height: 44px;
+}
+
+.section--dark .btn-pill {
+  color: var(--color-bright-blue);
+  border-color: var(--color-bright-blue);
+}
+
+.section--light .btn-pill,
+.section--white .btn-pill {
+  color: var(--color-link-blue);
+  border-color: var(--color-link-blue);
+}
+
+.section--dark .btn-pill:hover {
+  background: var(--color-bright-blue);
+  color: var(--color-black);
+}
+
+.section--light .btn-pill:hover,
+.section--white .btn-pill:hover {
+  background: var(--color-link-blue);
+  color: var(--color-white);
+}
+
+/* Inline learn-more link — the chevron pattern */
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  color: var(--color-link-blue);
+  transition: gap 0.3s var(--ease-out-expo);
+}
+
+.section--dark .learn-more {
+  color: var(--color-bright-blue);
+}
+
+.learn-more::after {
+  content: "\203A";
+  font-size: 1.1em;
+  line-height: 1;
+  display: inline-block;
+  transform: translateY(-1px);
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+.learn-more:hover {
+  text-decoration: none;
+  gap: 6px;
+}
+
+.learn-more:hover::after {
+  transform: translate(2px, -1px);
+}
+
+/* --------------------------------------------------------------------------
+   App Grid (on index)
+   -------------------------------------------------------------------------- */
+
+.section-heading {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.10;
+  letter-spacing: -0.3px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.section-lede {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.19;
+  letter-spacing: 0.231px;
+  text-align: center;
+  margin-bottom: 56px;
+  color: var(--color-text-soft);
+}
+
+.section--dark .section-heading,
+.section--dark .section-lede {
+  color: var(--color-white);
+}
+
+.section--dark .section-lede {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 734px) {
+  .section-heading {
+    font-size: 32px;
+  }
+  .section-lede {
+    font-size: 19px;
+    margin-bottom: 40px;
+  }
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 734px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.app-tile {
+  display: flex;
+  flex-direction: column;
+  padding: 52px 40px;
+  border-radius: 18px;
+  background: var(--color-white);
+  color: var(--color-near-black);
+  text-decoration: none;
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s var(--ease-out-expo);
+}
+
+.app-tile:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  color: var(--color-near-black);
+}
+
+.section--dark .app-tile {
+  background: #161617;
+  color: var(--color-white);
+}
+
+.section--dark .app-tile:hover {
+  color: var(--color-white);
+}
+
+.app-tile-eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  color: var(--color-link-blue);
+}
+
+.section--dark .app-tile-eyebrow {
+  color: var(--color-bright-blue);
+}
+
+.app-tile-title {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.10;
+  letter-spacing: -0.2px;
+  margin-bottom: 8px;
+}
+
+.app-tile-tagline {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.21;
+  letter-spacing: 0.012em;
+  color: var(--color-text-soft);
+  margin-bottom: 32px;
+  max-width: 28ch;
+}
+
+.section--dark .app-tile-tagline {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.app-tile-cta {
+  margin-top: auto;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 734px) {
+  .app-tile {
+    padding: 40px 28px;
+    min-height: 340px;
+  }
+  .app-tile-title {
+    font-size: 28px;
+  }
+  .app-tile-tagline {
+    font-size: 17px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Feature Grid (product pages)
+   -------------------------------------------------------------------------- */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 0;
+}
+
+@media (max-width: 734px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature {
+  padding: 40px 32px;
+  border-radius: 18px;
+  background: var(--color-white);
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.section--dark .feature {
+  background: #161617;
+}
+
+.feature-eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-link-blue);
+  margin-bottom: 8px;
+}
+
+.section--dark .feature-eyebrow {
+  color: var(--color-bright-blue);
+}
+
+.feature h3 {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.17;
+  letter-spacing: -0.15px;
+  margin-bottom: 8px;
+}
+
+.feature p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.24px;
+  color: var(--color-text-soft);
+}
+
+.section--dark .feature h3 {
+  color: var(--color-white);
+}
+
+.section--dark .feature p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* --------------------------------------------------------------------------
+   Privacy Page
+   -------------------------------------------------------------------------- */
+
+.privacy {
+  padding: 88px 0 120px;
+  background: var(--color-light-gray);
+}
+
+.privacy-header {
+  margin-bottom: 44px;
+}
+
+.privacy-eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-link-blue);
+  margin-bottom: 10px;
+}
+
+.privacy h1 {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.10;
+  letter-spacing: -0.3px;
+  color: var(--color-near-black);
+  margin-bottom: 8px;
+}
+
+.privacy .updated {
+  font-size: 14px;
+  color: var(--color-text-tertiary);
+  letter-spacing: -0.224px;
+}
+
+.privacy h2 {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.15px;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  color: var(--color-near-black);
+}
+
+.privacy p,
+.privacy li {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.58;
+  letter-spacing: -0.374px;
+  color: var(--color-text-soft);
+  margin-bottom: 12px;
+}
+
+.privacy ul {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.privacy li {
+  margin-bottom: 6px;
+}
+
+.privacy strong {
+  color: var(--color-near-black);
+  font-weight: 600;
+}
+
+@media (max-width: 734px) {
+  .privacy {
+    padding: 64px 0 88px;
+  }
+  .privacy h1 {
+    font-size: 32px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.footer {
+  padding: 32px 0;
+  background: var(--color-light-gray);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.footer-inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer p,
+.footer a {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--color-text-muted);
+}
+
+.footer a:hover {
+  color: var(--color-near-black);
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+}
+
+/* --------------------------------------------------------------------------
+   Reveal-on-scroll
+   -------------------------------------------------------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s var(--ease-out-expo),
+              transform 0.7s var(--ease-out-expo);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

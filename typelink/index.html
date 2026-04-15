@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeLink — 20 問で MBTI タイプ診断 | Nikki Apps</title>
+  <meta name="description" content="20 問のクイック診断で自分の MBTI タイプがわかる。結果はシェアカードで友達に送れます。">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Nikki Apps</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/typelink/privacy.html">Privacy</a></li>
+      <li><a href="mailto:nikki.ai.0024@gmail.com">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section class="section section--dark hero">
+    <div class="container">
+      <p class="eyebrow">TypeLink</p>
+      <h1>20 問で、<br>MBTI 診断。</h1>
+      <p class="tagline">最短 3 分でわかる性格タイプ。結果はシェアカードで SNS に投稿できます。</p>
+      <div class="hero-cta">
+        <a href="https://apps.apple.com/app/id6760254195" class="btn btn-primary" target="_blank" rel="noopener">App Store で見る</a>
+        <a href="/typelink/privacy.html" class="btn btn-pill">プライバシー</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--light">
+    <div class="container">
+      <h2 class="section-heading reveal">会話のきっかけに。</h2>
+      <p class="section-lede reveal">重いテストではなく、軽いタッチで。</p>
+
+      <div class="features">
+        <div class="feature reveal">
+          <p class="feature-eyebrow">Quick</p>
+          <h3>最短 3 分</h3>
+          <p>20 問のシンプルな設問で、あなたの 16 タイプのうちどれかがすぐにわかります。</p>
+        </div>
+        <div class="feature reveal">
+          <p class="feature-eyebrow">Share</p>
+          <h3>シェアカード</h3>
+          <p>診断結果はデザインされたカードに。X、Instagram、LINE などに気軽に投稿できます。</p>
+        </div>
+        <div class="feature reveal">
+          <p class="feature-eyebrow">Compat</p>
+          <h3>相性チェック</h3>
+          <p>友達や恋人のタイプと比較して、相性をチェック。会話のきっかけにどうぞ。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>&copy; 2026 Nikki Apps</p>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/typelink/privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>
